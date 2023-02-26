@@ -1,7 +1,7 @@
 import { Component } from 'react';
 import { ContactForm } from './phonebookForm/PhonebookForn';
 import { GlobalStyle } from './GlobalStyle';
-import { Layout } from './Layout.styled';
+import { Layout } from './Layout/Layout';
 import { ContactList } from './contactsList/ContactList';
 import { Filter}  from './filter/Filter';
 
