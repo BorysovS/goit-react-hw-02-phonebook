@@ -1,15 +1,23 @@
-// import { Formik, Form, Field, ErrorMessage } from 'formik';
+import { FilterSection, FilterLabel, FilterInput } from './Filter.styled';
+import PropTypes from 'prop-types';
 
 export const Filter = ({ onChange, filter }) => {
   return (
-    <label htmlFor="filter">
-      Find contact by name
-      <input
-        name="filter"
-        placeholder="Find"
-        onChange={onChange}
-        value={filter}
-      />
-    </label>
+    <FilterSection>
+      <FilterLabel htmlFor="filter">
+        Find contact by name
+        <FilterInput
+          name="filter"
+          placeholder="Find"
+          onChange={onChange}
+          value={filter}
+        />
+      </FilterLabel>
+    </FilterSection>
   );
+};
+
+Filter.propTypes = {
+  filter: PropTypes.number.isRequired,
+  onChange: PropTypes.func.isRequired,
 };
