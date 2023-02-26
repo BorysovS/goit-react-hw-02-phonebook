@@ -20,4 +20,8 @@ export const ErrorMessage = styled(FormikError)`
   color: red;
 `;
 
-export const InputName = styled.span``;
+export const FormLabel = styled.span`
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+`;

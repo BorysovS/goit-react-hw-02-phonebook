@@ -1,7 +1,7 @@
 import { Formik, Field } from 'formik';
 import { nanoid } from 'nanoid';
 import * as Yup from 'yup';
-import { Form, ErrorMessage } from './PhonebookFrom.styled';
+import { Form, ErrorMessage, FormLabel } from './PhonebookFrom.styled';
 
 const ContactSchema = Yup.object().shape({
   name: Yup.string()
@@ -25,16 +25,18 @@ export const ContactForm = ({ onSubmit }) => {
       validationSchema={ContactSchema}
     >
       <Form autoComplete="off">
-        <label htmlFor="name">
+        <FormLabel htmlFor="name">
           <span>Name</span>
           <Field name="name" placeholder="Name" />
           <ErrorMessage name="name" component="span" />
-        </label>
-        <label htmlFor="number">
+        </FormLabel>
+        <FormLabel htmlFor="number">
           <span>Number</span>
           <Field name="number" placeholder="xxx-xx-xx" />
-          <ErrorMessage name="number" component="span" />
-        </label>
+          <div>
+            <ErrorMessage name="number" component="span" />
+          </div>
+        </FormLabel>
         <button type="submit">Add contact</button>
       </Form>
     </Formik>

@@ -19,7 +19,6 @@ export class App extends Component {
   };
   
   handleFilterInput = evt => { 
-    console.log(evt.target.value);
     this.setState({filter: evt.target.value})
   }
 
@@ -31,13 +30,20 @@ export class App extends Component {
   }
 
   addContact = newContact => {
+    const normalizeName = newContact.name.toLowerCase();
+    const checkName = this.state.contacts.find(contact => {
+     return contact.name.toLowerCase() === normalizeName
+    });
     this.setState(pervState => {
+          if (checkName) { 
+      alert(`${newContact.name} is alredy in contacts`)
+      return
+    }
       return {
         contacts: [...pervState.contacts, newContact],
       };
     }
     );
-     console.log(this.state.contacts);
   };
 
   deleteContact = contactId => { 
