@@ -19,3 +19,5 @@ export const ErrorMessage = styled(FormikError)`
   margin-left: 20px;
   color: red;
 `;
+
+export const InputName = styled.span``;
